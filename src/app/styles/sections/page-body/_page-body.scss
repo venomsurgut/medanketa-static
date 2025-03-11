@@ -1,0 +1,39 @@
+.page-body {
+    padding-top: 36px;
+    padding-bottom: 120px;
+
+    h3 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+        color: $black;
+        line-height: 140%;
+
+        &:first-of-type {
+            margin-top: 0px;
+        }
+    }
+
+    ul {
+        li {
+            margin-bottom: .5rem;
+            font-size: 16px;
+            color: $black;
+            line-height: 140%;
+
+            &:last-of-type {
+                margin-bottom: 0rem;
+            }
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: $black;
+        line-height: 140%;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}

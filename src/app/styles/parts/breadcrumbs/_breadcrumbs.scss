@@ -1,0 +1,42 @@
+.breadcrumbs-list {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    @media (min-width: 1200px) {
+        justify-content: flex-start;
+    }
+}
+
+.breadcrumbs-list__item {
+    list-style: none;
+}
+
+.breadcrumbs-list__text {
+    font-size: 18px;
+    font-weight: 400;
+    color: $black;
+}
+
+.breadcrumbs-list__sep {
+    font-size: 18px;
+    font-weight: 400;
+    color: $grey;
+}
+
+.breadcrumbs-list__link {
+    font-size: 18px;
+    font-weight: 400;
+    color: $grey;
+    transition: .3s color;
+
+    &:hover {
+        color: $primary;
+        transition: .3s color;
+    }
+}

@@ -1,0 +1,9 @@
+.main {
+    &:not(.home) {
+        padding-top: 100px;
+
+        @media (min-width: 1200px) {
+            padding-top: 128px;
+        }
+    }
+}

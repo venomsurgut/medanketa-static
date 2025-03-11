@@ -1,0 +1,11 @@
+.page-head {
+    padding-bottom: 0px;
+}
+
+.post__title {
+    font-size: 30px;
+
+    @media (min-width: 1200px) {
+        font-size: 50px;
+    }
+}

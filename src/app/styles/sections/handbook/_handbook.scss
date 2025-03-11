@@ -1,0 +1,224 @@
+.handbook-section {
+    padding-top: 0px;
+    padding-bottom: 42px;
+
+    @media (min-width: 1200px) {
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }
+}
+
+.handbook-section__side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+
+    @media (min-width: 1200px) {
+        align-items: flex-start;
+    }
+}
+
+.handbook-section__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: 328px 1fr;
+        gap: 64px;
+    }
+}
+
+.handbook-section__title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 35px;
+    line-height: 120%;
+
+    @media (min-width: 1200px) {
+        font-size: 50px;
+    }
+}
+
+.handbook-section__descr {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.handbook-section__text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+.handbook-section__btn {
+    display: flex;
+    margin-top: 40px;
+}
+
+.handbook-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.handbook-list__item {
+    list-style: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $white;
+    border-radius: 30px;
+    overflow: hidden;
+
+    &.active {
+        
+        border-color: $grey;
+
+        .handbook-example__head {
+            background-color: transparent;
+        }
+
+        .handbook-example__head-icon {
+            background-color: $white;
+            transform: rotate(-125deg);
+            transition: .3s all;
+
+            svg {
+                path {
+                    stroke: $primary;
+                }
+            }
+        }
+
+        .handbook-example__body {
+            max-height: 220px;
+            transition: .3s max-height;
+        }
+
+        .handbook-example__grid {
+            max-height: 120px;
+            transition: .3s max-height;
+
+            @media (min-width: 1200px) {
+                max-height: 130px;
+            }
+        }
+
+    }
+}
+
+.handbook-example__note {
+    font-size: 12px;
+    color: grey;
+    margin-top: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px solid $grey;
+
+    @media (min-width: 1200px) {
+        font-size: 14px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+.handbook-example__head {
+    padding-left: 22px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    @media (min-width: 1200px) {
+        padding-left: 36px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 16px;
+    }
+}
+
+.handbook-example__head-text {
+    font-size: 16px;
+
+    @media (min-width: 1200px) {
+        font-size: 18px;
+    }
+}
+
+.handbook-example__head-icon {
+    display: flex;
+    background-color: $primary;
+    padding: 6px;
+    border-radius: 30px;
+    transition: .3s all;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+.handbook-example__body {
+    max-height: 0px;
+    transition: .3s max-height;
+}
+
+.handbook-example__grid {
+    max-height: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    transition: .3s max-height;
+}
+
+.handbook-example__grid-wrap {
+    border-top: 1px solid $grey;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media (min-width: 1200px) {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+.handbook-lexicon__word {
+    font-size: 14px;
+    line-height: 180%;
+}
+
+.handbook-lexicon__decoding {
+    font-size: 14px;
+    color: $grey-d;
+    line-height: 180%;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.handbook-lexicon {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+}

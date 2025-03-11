@@ -1,0 +1,154 @@
+.form__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form {
+    padding-left: 24px;
+    padding-right: 24px;
+    opacity: 0;
+    z-index: -100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+        
+    @media (min-width: 1200px) {
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        padding: 32px;
+        border-radius: 32px;
+        max-width: 560px;
+    }
+
+    &.active {
+        opacity: 1;
+        z-index: 100;
+    }
+
+    &--modal {
+
+        .form__wrap {
+            position: relative;
+            padding: 24px;
+            background-color: $white;
+            border-radius: 16px;
+            width: 100%;
+        
+            @media (min-width: 1200px) {
+                padding: 32px;
+                border-radius: 32px;
+            }
+        }
+    }
+}
+
+.fieldset {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+
+    &--cols-2 {
+        
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @media (min-width: 1200px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+    }
+}
+
+.input {
+
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid $grey;
+    padding: 16px 24px;
+    font-size: 16px;
+    outline: none;
+
+    @media (min-width: 1200px) {
+        border-radius: 32px;
+    }
+
+    &::placeholder {
+        color: $grey-ts;
+    }
+
+    &:active {
+        outline: none;
+        border-color: $black;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $black;
+    }
+}
+
+
+
+
+.textarea {
+
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid $grey;
+    padding: 16px 24px;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+
+    @media (min-width: 1200px) {
+        border-radius: 32px;
+    }
+
+    &::placeholder {
+        color: $grey-ts;
+    }
+
+    &:active {
+        outline: none;
+        border-color: $black;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $black;
+    }
+}
+
+.form__title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+    font-weight: bold;
+
+    @media (min-width: 1200px) {
+        font-size: 32px;
+    }
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form__btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.form__btn-send {
+    width: 100%;
+}

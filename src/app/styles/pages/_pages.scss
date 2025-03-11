@@ -1,0 +1,15 @@
+@import "about/about";
+@import "blog/blog";
+@import "contacts/contacts";
+
+.page-title {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    font-size: 50px;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+        font-size: 80px;
+        text-align: left;
+    }
+}

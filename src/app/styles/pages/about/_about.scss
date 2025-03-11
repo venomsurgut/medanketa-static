@@ -1,0 +1,47 @@
+
+
+.about-section__row {
+
+    @media (min-width: 1200px) {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    &:first-of-type {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+    &--bg-white {
+        background-color: $white;
+    }
+
+    &:nth-child(2) {
+        background-color: $white;
+
+        @media(max-width: 1200px) {
+            padding-top: 40px;
+        }
+
+        .about-content__grid {
+
+            @media(max-width: 1200px) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    &:nth-child(3) {
+
+        @media(max-width: 1200px) {
+            padding-top: 40px;
+        }
+    }
+
+    &:last-of-type {
+
+        @media (min-width: 1200px) {
+            padding-bottom: 112px;
+        }
+    }
+}

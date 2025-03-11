@@ -1,0 +1,94 @@
+.vocations-section {
+    padding-top: 180px;
+    padding-bottom: 60px;
+
+    @media (min-width: 1200px) {
+        padding-top: 120px;
+    }
+}
+
+.vocations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 8px;
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px 12px;
+    }
+}
+
+.vocations-card {
+    padding: 12px;
+    position: relative;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @media (min-width: 1200px) {
+        padding: 24px;
+        height: 260px;
+        border-radius: 30px;
+    }
+}
+
+.vocations-card__title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    position: relative;
+    z-index: 20;
+
+    @media (min-width: 1200px) {
+        font-size: 25px;
+    }
+}
+
+.vocations-card__picture {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::before {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: linear-gradient(0.5deg, #F0F4F6 0.43%, rgba(240, 244, 246, 0) 29.25%);
+        border-radius: 0px 0px 15px 15px;
+    }
+}
+
+.vocations__qoute {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vocations__qoute-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.vocations__btn {
+    margin-top: 24px;
+}

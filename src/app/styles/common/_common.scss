@@ -1,0 +1,66 @@
+@import "normalize/normalize";
+@import "fonts/fonts";
+@import "grid/grid";
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    font-family: 'Gilroy';
+    font-style: normal;
+    line-height: 1;
+    font-weight: 500;
+    color: $black-ts;
+    box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 6px;               /* ширина scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background: $grey-s;        /* цвет дорожки */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary-alt;    /* цвет плашки */
+    border-radius: 20px;  /* padding вокруг плашки */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $white-ts;
+
+    &.active {
+        overflow: hidden;
+    }
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.global-layout {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: .8;
+
+    &.active {
+        display: flex;
+        z-index: 90;
+    }
+}
+
+.modals {
+    padding-left: 12px;
+    padding-right: 12px;
+}

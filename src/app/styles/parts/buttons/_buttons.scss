@@ -1,0 +1,199 @@
+.btn {
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .3s color, .3s background-color, .3s border-color;
+
+    &--grey {
+        color: $grey-ts;
+        background-color: $white;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $grey-ts;
+        transition: .3s color, .3s background-color, .3s border-color;
+
+        &:hover {
+            background-color: $primary;
+            border-color: $primary;
+            color: $white;
+            transition: .3s color, .3s background-color, .3s border-color;
+        }
+    }
+
+    &--play {
+        margin-left: 25px;
+        margin-right: 12px;
+        position: relative;
+        padding: 0;
+        width: 34px;
+        height: 34px;
+        display: inline-block;
+        background-color: $primary;
+        border: none;
+        border-radius: 64px;
+        background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.95703 9.5H15.0404' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.5 3.95837L15.0417 9.50004L9.5 15.0417' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+
+
+        &::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $primary;
+            border-radius: 64px;
+            opacity: .5;
+            z-index: 20;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            content: "";
+            width: 66px;
+            height: 66px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $white;
+            border-radius: 64px;
+            opacity: .2;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn__icon {
+            padding: 8px;
+            width: 34px;
+            height: 34px;
+            border-radius: 64px;
+            background-color: $primary;
+            z-index: 30;
+        }
+
+        .btn__icon {
+            transition: .3s padding, .3s width, .3s height;
+        }
+
+        &:hover {
+            .btn__icon {
+                padding: 16px;
+                width: 50px;
+                height: 50px;
+                border-radius: 64px;
+                background-color: $primary;
+                z-index: 30;
+                transition: .3s padding, .3s width, .3s height;
+            }
+        }
+    }
+
+    &--white {
+        padding-left: 42px;
+        padding-right: 42px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        color: $primary;
+        font-weight: 500;
+        background-color: $white;
+        border-color: $primary;
+        transition: .3s color, .3s background-color, .3s border-color;
+
+        &:hover {
+            color: white;
+            background-color: $primary;
+            border-color: $white;
+            transition: .3s color, .3s background-color, .3s border-color;
+        }
+    }
+
+    &--border-primary {
+        border-width: 1px;
+        border-style: solid;
+        color: $primary;
+        border-color: $primary;
+        font-weight: 500;
+
+        &:hover {
+            color: white;
+            background-color: $primary;
+            border-color: $white;
+            transition: .3s color, .3s background-color, .3s border-color;
+        }
+    }
+
+    &--primary {
+        color: $white;
+        background-color: $primary;
+        border-color: $primary;
+
+        &:hover {
+            color: $primary;
+            background-color: $white;
+            border-color: $primary;
+            transition: .3s color, .3s background-color, .3s border-color;
+        }
+    }
+
+    &--with-icon {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: center;
+
+        &:hover {
+            svg {
+                path {
+                    stroke: $primary;
+                }
+            }
+        }
+    }
+
+    &--close {
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        line-height: 1;
+        color: $white;
+        background-color: $primary-alt;
+        transform: rotate(45deg);
+    }
+
+    @keyframes fadeIn {
+        0% {
+            width: 50px;
+            height: 50px;
+        }
+        30% {
+            width: 58px;
+            height: 58px;
+        }
+        50% {
+            width: 54px;
+            height: 54px;
+        }
+        70% {
+            width: 58px;
+            height: 58px;
+        }
+        100% {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

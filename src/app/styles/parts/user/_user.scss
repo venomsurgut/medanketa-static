@@ -1,0 +1,66 @@
+.header__user-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-auth__actions {
+    display: none;
+
+    @media (min-width: 1200px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+.user-auth__icon {
+    border: 1px solid $grey;
+    width: 36px;
+    height: 36px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 64px;
+
+    @media (min-width: 1200px) {
+        display: none;
+        background-color: $grey;
+        width: 50px;
+        height: 50px;
+    }
+
+    svg {
+        @media (max-width: 1200px) {
+            width: 14px;
+            height: 14px;
+        }
+    }
+} 
+
+.user-auth__link {
+    font-size: 16px;
+    color: $white;
+    transition: .3s color;
+
+    @media (min-width: 1200px) {
+        color: $black;
+    }
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.user-auth__sep {
+    font-size: 16px;
+    color: $white;
+    transition: .3s color;
+
+    @media (min-width: 1200px) {
+        color: $black;
+    }
+}
