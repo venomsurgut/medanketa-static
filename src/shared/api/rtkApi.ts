@@ -5,7 +5,7 @@ import {site} from "../const/const";
 export const api = createApi({
 	reducerPath: 'api',
 	baseQuery: fetchBaseQuery({
-		baseUrl: site,
+		baseUrl: `${site}/api/`,
 	}),
 	endpoints: () => ({}),
 });
