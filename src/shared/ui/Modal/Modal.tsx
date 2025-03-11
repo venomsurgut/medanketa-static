@@ -113,18 +113,18 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, sendSupportMessage }) =
 
                         <div className="form__body">
                             <fieldset className="form__fieldset fieldset">
-                                <input onChange={handleChange} className="form__input input input--text" type="text" name="support_user_name"
-                                       id="support_user_name" placeholder="Ваше имя"/>
+                                <input onChange={handleChange} className="form__input input input--text" type="text" name="name"
+                                       id="name" placeholder="Ваше имя"/>
                             </fieldset>
                             <fieldset className="form__fieldset fieldset fieldset--cols-2">
-                                <input onChange={handleChange} className="form__input input input--mail" type="email" name="support_user_email"
-                                       id="support_user_email" placeholder="Ваша почта"/>
-                                <input onChange={handleChange} className="form__input input input--phone" type="text" name="support_user_phone"
-                                       id="support_user_phone" placeholder="Ваш телефон"/>
+                                <input onChange={handleChange} className="form__input input input--mail" type="email" name="email"
+                                       id="email" placeholder="Ваша почта"/>
+                                <input onChange={handleChange} className="form__input input input--phone" type="text" name="phone"
+                                       id="phone" placeholder="Ваш телефон"/>
                             </fieldset>
                             <fieldset className="form__fieldset fieldset">
-                                <textarea onChange={handleChange} className="form__textarea textarea textarea--big" name="support_user_message"
-                                          id="support_user_message" placeholder="Ваше сообщение"></textarea>
+                                <textarea onChange={handleChange} className="form__textarea textarea textarea--big" name="message"
+                                          id="message" placeholder="Ваше сообщение"></textarea>
                             </fieldset>
                         </div>
                         <div className="form__side">
