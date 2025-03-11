@@ -3,6 +3,7 @@ import {HandbookSection} from "./HandbookSection";
 import {site} from "../../../shared/const/const";
 import {AnimatedPictureHome} from "../../../shared/ui/AnimatedImage/AnimatedImage";
 import {AnimatedItem} from "../../../shared/ui/AnimatedItem/AnimatedItem";
+import {Link} from "react-router-dom";
 
 export const Home: React.FC = () => {
     return (
@@ -324,10 +325,10 @@ export const Home: React.FC = () => {
                                     Позволяют быстро создать анкету или тест на медцинскую тематику
                                 </p>
                             </div>
-                            <a href="/handbooks" className="handbook-section__btn btn btn--primary btn--with-icon">
+                            <Link to="/handbooks" className="handbook-section__btn btn btn--primary btn--with-icon">
                                 <img src="/img/book_icon.svg"/>
                                 Все справочники
-                            </a>
+                            </Link>
                         </div>
                         <HandbookSection/>
                     </div>
