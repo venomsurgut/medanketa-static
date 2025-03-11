@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Breadcrumb} from "../../../entities/Breadcrumb/ui/Breadcrumb.tsx";
+import {Breadcrumb} from "../../../entities/Breadcrumb/ui/Breadcrumb";
 
 export const Policy: FC = () => {
     return (
