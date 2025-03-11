@@ -1,9 +1,16 @@
 import {api} from "../../../shared/api/rtkApi";
-import {dataModal} from "../../../shared/ui/Modal/Modal";
+export interface dataSendSupport {
+    email: string
+    message: {
+        name: string
+        phone: string
+        text: string
+    }
+}
 
 const supportApi = api.injectEndpoints({
     endpoints: (build) => ({
-        sendSupportMessage: build.mutation<{sucess?: boolean}, dataModal>({
+        sendSupportMessage: build.mutation<{sucess?: boolean}, dataSendSupport>({
             query: (body) => ({
                 url: "support",
                 method: "POST",

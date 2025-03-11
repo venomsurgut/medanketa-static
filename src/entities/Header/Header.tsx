@@ -75,7 +75,14 @@ export const Header: FC = () => {
                     </div>
                 </div>
                 <Modal sendSupportMessage={(data) => {
-                    sendMessageToSupport(data)
+                    sendMessageToSupport({
+                        email: data.email,
+                        message: {
+                            name: data?.name ?? 'Анонимный',
+                            phone: data?.phone ?? 'Не указан',
+                            text: data.message,
+                        }
+                    })
                 }} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
                 <CompletedDialog isOpen={isDialogOpen}/>
             </div>

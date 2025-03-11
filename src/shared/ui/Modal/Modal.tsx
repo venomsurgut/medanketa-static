@@ -37,24 +37,24 @@
 
 import React, { FC, useState } from "react";
 
-export interface dataModal {
-    support_user_name: string,
-    support_user_email: string,
-    support_user_phone: string,
-    support_user_message: string,
+export interface SupportModalData {
+    email: string
+    message: string
+    name: string
+    phone:string
 }
 
 type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
-    sendSupportMessage: (data: dataModal) => void
+    sendSupportMessage: (data: SupportModalData) => void
 };
 
-const defaultData: dataModal = {
-    support_user_name: "",
-    support_user_email: "",
-    support_user_phone: "",
-    support_user_message: "",
+const defaultData = {
+    email: '',
+    message: '',
+    name: '',
+    phone: ''
 }
 
 export const Modal: FC<ModalProps> = ({ isOpen, onClose, sendSupportMessage }) => {
@@ -67,7 +67,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, sendSupportMessage }) =
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!formData['support_user_email'] || !formData['support_user_message']) {
+        if (!formData['email'] || !formData['message']) {
             alert("Email и Сообщение - обязательные поля!");
             return;
         }
