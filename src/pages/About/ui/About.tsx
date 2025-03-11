@@ -22,7 +22,7 @@ export const About: FC = () => {
                             </div>
                             <div className="about-content__col">
                                 <picture className="about-content__preview-picture">
-                                    {/*<source media="(min-width: )" srcSet=""/>*/}
+                                    <source media="(min-width: )" srcSet=""/>
                                     <img src="/img/onas-1.png" alt=""/>
                                 </picture>
                             </div>

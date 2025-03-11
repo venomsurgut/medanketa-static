@@ -6,7 +6,13 @@ interface BreadcrumbItem {
     path: string;
 }
 
-const titles: Record<string, string> = { "about": "О нас", "contacts": "Контакты", "services": "Услуги", "handbooks": "Справочники" }
+const titles: Record<string, string> = {
+    "about": "О нас",
+    "contacts": "Контакты",
+    "services": "Услуги",
+    "handbooks": "Справочники",
+    "policy": 'Политика обработки персональных данных'
+}
 
 
 export const Breadcrumb: FC = () => {

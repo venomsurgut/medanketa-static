@@ -4,6 +4,7 @@ import {site} from "../../../shared/const/const";
 import {AnimatedPictureHome} from "../../../shared/ui/AnimatedImage/AnimatedImage";
 import {AnimatedItem} from "../../../shared/ui/AnimatedItem/AnimatedItem";
 import {Link} from "react-router-dom";
+import {home_handbook} from "../../../shared/const/handbook_sections";
 
 export const Home: React.FC = () => {
     return (
@@ -330,7 +331,7 @@ export const Home: React.FC = () => {
                                 Все справочники
                             </Link>
                         </div>
-                        <HandbookSection/>
+                        <HandbookSection data={home_handbook}/>
                     </div>
                 </div>
             </section>

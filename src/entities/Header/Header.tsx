@@ -1,10 +1,22 @@
 import { FC, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { sile_login, sile_register, site } from "../../shared/const/const";
+import {Modal} from "../../shared/ui/Modal/Modal";
+import CompletedDialog from "../../shared/ui/Dialog/variants/SuccessfulDialog";
+import {useSendSupportMessageMutation} from "./api/support_api";
 
 export const Header: FC = () => {
     const [isBurgerActive, setBurgerActive] = useState(false);
     const [isScrolled, setScrolled] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [sendMessageToSupport, {data}] = useSendSupportMessageMutation()
+
+    useEffect(() => {
+        if (data?.sucess) {
+            setIsDialogOpen(true)
+        }
+    }, [data]);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 250);
@@ -39,14 +51,14 @@ export const Header: FC = () => {
                                 <Link onClick={() => closeBurger()} to="/handbooks" className="header-menu__link">Справочники</Link>
                             </li>
                             <li className="header-menu__item header-menu__item--mobile">
-                                <button className="header-menu__link header__btn btn btn--grey btn-open">
+                                <button onClick={() => setIsModalOpen(true)} className="header-menu__link header__btn btn btn--grey btn-open">
                                     Напишите нам
                                 </button>
                             </li>
                         </ul>
                     </nav>
                     <div className="header__actions">
-                        <button className="header__btn btn btn--grey btn-open">Напишите нам</button>
+                        <button onClick={() => setIsModalOpen(true)} className="header__btn btn btn--grey btn-open">Напишите нам</button>
                         <button className={`header__burger burger ${isBurgerActive ? "active" : ""}`} onClick={toggleBurger}>
                             <span></span><span></span><span></span><span></span>
                         </button>
@@ -62,6 +74,10 @@ export const Header: FC = () => {
                         </div>
                     </div>
                 </div>
+                <Modal sendSupportMessage={(data) => {
+                    sendMessageToSupport(data)
+                }} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                <CompletedDialog isOpen={isDialogOpen}/>
             </div>
             {/* Оверлей для закрытия бургера */}
             {isBurgerActive && <div className="global-layout active" onClick={closeBurger}></div>}

@@ -53,9 +53,9 @@ export const Contacts: FC = () => {
                                 Россия, 107553, г. Москва, ул. Большая Черкизовская, д. 24 А, строение 1, офис № 527
                             </p>
                         </div>
-                        <div className="contacts-card__icon">
-                            <img src="/img/phone_icon.svg"/>
-                        </div>
+                        {/*<div className="contacts-card__icon">*/}
+                        {/*    <img src="/img/phone_icon.svg"/>*/}
+                        {/*</div>*/}
                         {/*<p className="contacts-card__title">*/}
                         {/*    Соцсети*/}
                         {/*</p>*/}

@@ -1,4 +1,5 @@
 import {FC} from "react";
+import {Breadcrumb} from "../../../entities/Breadcrumb/ui/Breadcrumb.tsx";
 
 export const Policy: FC = () => {
     return (
@@ -6,6 +7,7 @@ export const Policy: FC = () => {
 
             <section className="page-head">
                 <div className="page-head__container container">
+                    <Breadcrumb/>
                     <h1 className="post__title page-title">
                         Политика обработки персональных данных
                     </h1>
