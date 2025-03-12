@@ -12,7 +12,7 @@ const supportApi = api.injectEndpoints({
     endpoints: (build) => ({
         sendSupportMessage: build.mutation<{sucess?: boolean}, dataSendSupport>({
             query: (body) => ({
-                url: "support",
+                url: "email/support",
                 method: "POST",
                 body,
             }),
