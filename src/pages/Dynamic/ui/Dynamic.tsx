@@ -34,7 +34,7 @@ export const DynamicPage: FC = () => {
                     </h1>
                 </div>
             </section>
-            <section className={styles.blocks}>
+            <section className={'container'}>
                 {pageData.content.map((block: any, index: number) => {
                     if (block.type === "text") return <TextBlock key={index} text={block.text}/>;
                     if (block.type === "section") return <SectionBlock key={index} text={block.text}/>;
