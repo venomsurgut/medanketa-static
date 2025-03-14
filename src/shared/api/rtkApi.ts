@@ -5,8 +5,8 @@ import {domen} from "../const/const";
 export const api = createApi({
 	reducerPath: 'api',
 	baseQuery: fetchBaseQuery({
-		// baseUrl: `${domen}/api/`,
-		baseUrl: `${domen}`,
+		baseUrl: `${domen}/api/`,
+		// baseUrl: `${domen}`,
 	}),
 	endpoints: () => ({}),
 });
