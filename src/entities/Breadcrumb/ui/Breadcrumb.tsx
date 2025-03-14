@@ -8,21 +8,25 @@ interface BreadcrumbItem {
 
 const titles: Record<string, string> = {
     "about": "О нас",
-    "contacts": "Контакты",
     "services": "Услуги",
     "handbooks": "Справочники",
-    "policy": 'Политика обработки персональных данных'
+    "policy": 'Политика обработки персональных данных',
+    "page": "Страницы"
+}
+
+interface BreadcrumbProps {
+    custom?: Record<string, string>
 }
 
 
-export const Breadcrumb: FC = () => {
+export const Breadcrumb: FC<BreadcrumbProps> = ({custom}) => {
     const location = useLocation();
     const pathSegments = location.pathname.split("/").filter(Boolean);
 
     const breadcrumbs: BreadcrumbItem[] = [
         { name: "Главная", path: "/" },
         ...pathSegments.map((segment, index) => ({
-            name: titles[segment] || decodeURIComponent(segment),
+            name: titles[segment] || custom?.[segment] || decodeURIComponent(segment),
             path: `/${pathSegments.slice(0, index + 1).join("/")}`
         }))
     ];

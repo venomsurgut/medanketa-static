@@ -4,6 +4,7 @@ import { sile_login, sile_register, site } from "../../shared/const/const";
 import {Modal} from "../../shared/ui/Modal/Modal";
 import CompletedDialog from "../../shared/ui/Dialog/variants/SuccessfulDialog";
 import {useSendSupportMessageMutation} from "./api/support_api";
+import {useGetPagesQuery} from "../../pages/Dynamic/api/routes_api";
 
 export const Header: FC = () => {
     const [isBurgerActive, setBurgerActive] = useState(false);
@@ -11,7 +12,7 @@ export const Header: FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [sendMessageToSupport, {data}] = useSendSupportMessageMutation()
-
+    const {data: pages} = useGetPagesQuery(null)
     useEffect(() => {
         if (data?.sucess) {
             setIsDialogOpen(true)
@@ -41,15 +42,28 @@ export const Header: FC = () => {
                     <nav className={`header__nav ${isBurgerActive ? "active" : ""}`} style={{zIndex: 100}} itemScope itemType="http://schema.org/SiteNavigationElement">
                         <ul itemProp="about" itemScope itemType="http://schema.org/ItemList"
                             className="header__menu header-menu">
-                            <li className="header-menu__item">
-                                <Link onClick={() => closeBurger()} to="/about" className="header-menu__link">О нас</Link>
-                            </li>
-                            <li className="header-menu__item">
-                                <Link onClick={() => closeBurger()} to="/contacts" className="header-menu__link">Контакты</Link>
-                            </li>
-                            <li className="header-menu__item">
-                                <Link onClick={() => closeBurger()} to="/handbooks" className="header-menu__link">Справочники</Link>
-                            </li>
+                            {pages && pages?.isActive && (
+                                <>
+                                    <Link onClick={() => closeBurger()} to={'/about'} className="header-menu__link">
+                                        О нас
+                                    </Link>
+                                    <Link onClick={() => closeBurger()} to={'/handbooks'} className="header-menu__link">
+                                        Справочники
+                                    </Link>
+                                    {pages && pages?.data && pages.data.map((page, index) => {
+                                        if (!page.seo?.sidebar) {
+                                            return null
+                                        }
+                                        return (
+                                            <li className="header-menu__item" key={`sidebar-items-${index}-${page?.page}`}>
+                                                <Link onClick={() => closeBurger()} to={'/page/' + page?.page} className="header-menu__link">
+                                                    {page?.name ?? ''}
+                                                </Link>
+                                            </li>
+                                        )
+                                    })}
+                                </>
+                            )}
                             <li className="header-menu__item header-menu__item--mobile">
                                 <button onClick={() => setIsModalOpen(true)} className="header-menu__link header__btn btn btn--grey btn-open">
                                     Напишите нам

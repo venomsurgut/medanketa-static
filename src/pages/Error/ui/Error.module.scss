@@ -1,0 +1,12 @@
+.main_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 202px);
+}
+
+@media (min-width: 1200px) {
+    .main_content {
+        min-height: calc(100vh - 150px);
+    }
+}

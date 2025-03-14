@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 
 interface AnimatedPictureProps {
     desktopSrc: string;
-    mobileSrc: string;
+    mobileSrc?: string;
     alt?: string;
 }
 

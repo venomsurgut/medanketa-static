@@ -1,0 +1,13 @@
+.main_content {
+    min-height: calc(100vh - 202px);
+}
+
+.blocks {
+    padding: 0 65px;
+}
+
+@media (min-width: 1200px) {
+    .main_content {
+        min-height: calc(100vh - 150px);
+    }
+}
