@@ -25,7 +25,7 @@ export interface FullPage {
 
 const routesApi = api.injectEndpoints({
     endpoints: (build) => ({
-        getPages: build.query<{isActive: boolean, text: string, header: string, data: FullPage[]}, null>({
+        getPages: build.query<{isActive: boolean, text: string, header: string, indexing: boolean, metrics?: string, data: FullPage[]}, null>({
             query: () => ({
                 url: `pages/info`,
             }),
